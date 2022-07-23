@@ -1,0 +1,58 @@
+{
+  "name": "electron-react",
+  "version": "0.0.1",
+  "description": "ElectronReact application build with Electron",
+  "author": {
+    "name": "Roman Tamazyan",
+    "email": "roman.1996.22@mail.ru"
+  },
+  "homepage": "https://github.com/",
+  "repository": "https://github.com/",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "bozon": "1.2.9",
+    "electron": "^19.0.9",
+    "jest": "28.1.0",
+    "spectron": "19.0.0",
+    "webpack": "^5.72.1"
+  },
+  "scripts": {
+    "start": "bozon start --reload",
+    "debagger": "bozon start --inspect-brk=12345",
+    "build": "bozon package windows",
+    "test": "bozon test"
+  },
+  "build": {
+    "appId": "com.electron.electronreact",
+    "copyright": "Copyright © 2021  Roman Tamazyan",
+    "productName": "Electron React",
+    "nsis": {
+      "license": "LICENSE",
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "private": true,
+        "token": ""
+      }
+    ],
+    "win": {}
+  },
+  "dependencies": {
+    "electron-log": "^4.4.7",
+    "electron-updater": "^5.0.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1"
+  }
+}

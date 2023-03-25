@@ -1,9 +1,9 @@
 import MainApp from './MainApp'
 import { checkForUpdates } from './updater';
 import { app } from 'electron';
-
+import isDev from 'electron-is-dev';
 const lock = app.requestSingleInstanceLock();
-
+console.log(isDev)
 if (!lock) {
     app.quit();
 } else {
@@ -16,5 +16,7 @@ if (!lock) {
             main.win.focus()
         }
     })
-    // setTimeout(checkForUpdates, 2000)
+    if(isDev){
+        setTimeout(checkForUpdates, 2000)
+    }
 }
